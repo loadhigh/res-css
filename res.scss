@@ -1,0 +1,25 @@
+$locale-map: (
+        ja-jp: (
+                newsokur,
+                newsokunomoral,
+                BakaNewsJP,
+                japan_anime,
+        ),
+        zh: (
+                China_irl,
+                Chinatown_irl,
+                chonglangTV,
+                saraba2nd,
+        )
+);
+
+@each $locale, $subs in $locale-map {
+  $selectors: ();
+  @each $sub in $subs {
+    $selectors: append($selectors, 'a[href^="/r/#{$sub}/"]', comma);
+    $selectors: append($selectors, '.SubredditVars-r-#{$sub}', comma);
+  }
+  #{$selectors} {
+    -webkit-locale: "#{$locale}"
+  }
+}
