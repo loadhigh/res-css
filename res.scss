@@ -251,7 +251,11 @@ $locale-map: (
     $selectors: append($selectors, 'a[href^="/r/#{$sub}/"]', comma);
     $selectors: append($selectors, '.SubredditVars-r-#{$sub}', comma);
   }
-  #{$selectors} {
-    -webkit-locale: "#{$locale}"
+  div.Post {
+    #{$selectors} {
+      h3 {
+        -webkit-locale: "#{$locale}"
+      }
+    }
   }
 }
