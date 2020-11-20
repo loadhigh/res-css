@@ -250,6 +250,7 @@ $locale-map: (
   @each $sub in $subs {
     $selectors: append($selectors, 'a[href^="/r/#{$sub}/"]', comma);
     $selectors: append($selectors, '.SubredditVars-r-#{$sub}', comma);
+    $selectors: append($selectors, 'body.res-r-#{$sub}', comma);
   }
   div.Post {
     #{$selectors} {
