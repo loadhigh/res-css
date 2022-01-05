@@ -1,6 +1,7 @@
 $locale-map: (
         ja-jp: (
                 newsokur,
+                newsokuexp,
                 japan_anime,
                 FoodPorn_ja,
                 nanJ,
@@ -88,7 +89,6 @@ $locale-map: (
                 radio_ja,
                 TV_ja,
                 jisaku_poem,
-                100 kin,
                 relaynovel_ja,
                 Netflix_jp,
                 soccer_jp,
@@ -242,6 +242,7 @@ $locale-map: (
                 hanren,
                 saraba1st,
                 saraba2nd,
+                CLTV,
         )
 );
 
@@ -249,8 +250,9 @@ $locale-map: (
   $selectors: ();
   $bodySelectors: ();
   @each $sub in $subs {
-    $selectors: append($selectors, 'a[href^="/r/#{$sub}/"]', comma);
-    $selectors: append($selectors, '.SubredditVars-r-#{$sub}', comma);
+    $selectors: append($selectors, 'a[href^="/r/#{to-lower-case($sub)}/"]', comma);
+    $selectors: append($selectors, '.SubredditVars-r-#{to-lower-case($sub)}', comma);
+    $selectors: append($selectors, 'body.res-r-#{to-lower-case($sub)}', comma);
   }
   #{$selectors} {
     -webkit-locale: "#{$locale}";
