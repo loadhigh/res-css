@@ -250,8 +250,8 @@ $locale-map: (
   $selectors: ();
   $bodySelectors: ();
   @each $sub in $subs {
-    $selectors: append($selectors, 'a[href^="/r/#{to-lower-case($sub)}/"]', comma);
-    $selectors: append($selectors, '.SubredditVars-r-#{to-lower-case($sub)}', comma);
+    $selectors: append($selectors, 'a[href^="/r/#{$sub}/"]', comma);
+    $selectors: append($selectors, '.subredditvars-r-#{to-lower-case($sub)}', comma);
     $selectors: append($selectors, 'body.res-r-#{to-lower-case($sub)}', comma);
   }
   #{$selectors} {
