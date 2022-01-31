@@ -124,8 +124,8 @@ $locale-map: (
         $selectors: append($selectors, 'a[href^="/r/"][href$="_JP/" i]', comma);
         $selectors: append($selectors, 'body[class*="res-r-"][class*="_ja" i]', comma);
         $selectors: append($selectors, 'body[class*="res-r-"][class*="_JP" i]', comma);
-        $selectors: append($selectors, '[class*=".subredditvars-r-"][class*="_ja" i]', comma);
-        $selectors: append($selectors, '[class*=".subredditvars-r-"][class*="_JP" i]', comma);
+        $selectors: append($selectors, '[class*="subredditvars-r-"][class*="_ja" i]', comma);
+        $selectors: append($selectors, '[class*="subredditvars-r-"][class*="_JP" i]', comma);
     }
     #{$selectors} {
         -webkit-locale: "#{$locale}";
